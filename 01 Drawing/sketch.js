@@ -28,7 +28,7 @@ function draw() {
   triangle(160, 165, 180, 175, 170, 185);
   fill(0);
   textSize(20);
-  text("@£$%@!", 160, 155);
+  text("@$%!", 160, 155);
 
   noStroke();
   fill(255, 255, 0);
