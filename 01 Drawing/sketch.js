@@ -6,29 +6,53 @@ function setup() {
 function draw() {
   background(200);
 
-  // big bully hill thing
-  fill(50);
-  ellipse(120, 120, 250, 200);
+  // Bully face (left)
+  fill(255, 200, 0);
+  ellipse(120, 200, 120, 120);
 
-  // mean speech bubble
+  // Bully angry eyebrows
+  stroke(0);
+  strokeWeight(5);
+  line(90, 170, 110, 180);
+  line(130, 180, 150, 170);
+
+  // Bully eyes
+  fill(0);
+  ellipse(105, 190, 12, 12);
+  ellipse(135, 190, 12, 12);
+
+  // Bully mouth (angry)
+  noFill();
+  strokeWeight(6);
+  arc(120, 220, 50, 25, 0, PI);
+
+  // Bully speech bubble
   fill(255);
-  ellipse(200, 100, 150, 100);
-  triangle(160, 120, 180, 130, 170, 140);
+  noStroke();
+  ellipse(190, 150, 90, 60);
+  triangle(160, 165, 180, 175, 170, 185);
   fill(0);
-  textSize(32);
-  text("@!", 180, 110);
+  textSize(20);
+  text("MEAN!", 160, 155);
 
-  // small scared face
+  // Victim face (right)
+  noStroke();
   fill(255, 255, 0);
-  ellipse(300, 280, 100, 100);
+  ellipse(280, 200, 120, 120);
 
-  // eyes
+  // Victim sad eyes
   fill(0);
-  ellipse(285, 270, 10, 10);
-  ellipse(315, 270, 10, 10);
+  ellipse(265, 190, 10, 10);
+  ellipse(295, 190, 10, 10);
 
-  // sad mouth
+  // Victim sad mouth
   noFill();
   stroke(0);
-  arc(300, 300, 40, 20, PI, 0);
+  strokeWeight(4);
+  arc(280, 230, 40, 25, PI, 0);
+
+  // Tear
+  noStroke();
+  fill(0, 150, 255);
+  ellipse(295, 205, 10, 15);
 }
