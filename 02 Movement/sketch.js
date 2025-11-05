@@ -37,3 +37,4 @@ function draw() {
   textSize(headlineSize);
   textStyle(BOLD);
   text(words[0] + " " + words[1], 50, height * 0.7);
+}
