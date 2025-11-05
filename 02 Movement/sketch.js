@@ -1,40 +1,31 @@
-let step = 0;
-let words = ["A THROW", "OF THE DICE", "WILL NEVER", "ABOLISH", "CHANCE"];
+let counter = 0;
+let message = "lines: "; // string variable
+let r, g, b; // colour variables
 
-function setup() {
+function setup(){
   createCanvas(windowWidth, windowHeight);
-  textFont("Georgia");
-  textAlign(LEFT, BASELINE);
+  // random colour set once — like week example
+  r = random(0,255);
+  g = random(0,255);
+  b = random(0,255);
 }
 
-function draw() {
-  background(245);
+function draw(){
+  background(255);
 
-  // Moving random lines
-  stroke(100);
-  for (let i = 0; i < 50; i++) {
-    let x1 = (i * 20 + step) % width;
-    let y1 = random(height);
-    let x2 = x1 + random(-80, 80);
-    let y2 = y1 + random(-30, 30);
-    strokeWeight(random(0.3, 1.5));
-    line(x1, y1, x2, y2);
-  }
+  // Draw random lines (from example)
+  let x1 = random(width);
+  let y1 = random(height);
+  let x2 = random(width);
+  let y2 = random(height);
+  stroke(r, g, b);
+  line(x1, y1, x2, y2);
 
-  // Random text clusters
-  noStroke();
+  // Text that increments with counter++
   fill(0);
-  for (let j = 0; j < 12; j++) {
-    let s = 18 + random(60);  // variable size
-    textSize(s);
-    let x = random(width);
-    let y = random(height);
-    text(random(words), x, y);
-  }
+  textSize(width/20);
+  textAlign(CENTER, CENTER);
+  text(message + counter, width/2, height/2);
 
-  // Main headline changes randomly
-  let headlineSize = 40 + random(30);
-  textSize(headlineSize);
-  textStyle(BOLD);
-  text(words[0] + " " + words[1], 50, height * 0.7);
+  counter++; // movement + increment
 }
